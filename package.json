@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://neochainer.space/",
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.5.0",
