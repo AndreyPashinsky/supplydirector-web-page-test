@@ -3,6 +3,13 @@ import styles from "./styles.module.scss";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import CategorySelect from '../../components/CategorySelect';
+import State from '../../components/State';
+import DatePickers from '../../components/DatePicker';
+import RangeSlider from '../../components/PriceSlider';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,45 +27,75 @@ function Profile() {
 
     return (
         <div className={styles.container}>
+            <h2>Создание запроса</h2>
             <Grid container spacing={3}>
                 <Grid item xs={6}>
-                    <Paper className={classes.paper}>Название товара</Paper>
+                <TextField className="input" id="outlined-basic" label="Название товара" variant="outlined" />
                 </Grid>
                 <Grid item xs={6}>
-                    <Paper className={classes.paper}>Категория</Paper>
+                    <CategorySelect />
                 </Grid>
                 <Grid item xs={12}>
-                    <Paper className={classes.paper}>Добавить поле характеристик</Paper>
+                <Button color="primary">+ Добавить поле характеристик</Button>
                 </Grid>
                 <Grid item xs={12}>
-                    <Paper className={classes.paper}>Подробное описание товара</Paper>
+                <TextField
+                    id="outlined-multiline-static"
+                    className="input"
+                    label="Подробное описание товара"
+                    multiline
+                    rows={4}
+                    variant="outlined"
+                />
                 </Grid>
                 <Grid item xs={12}>
-                    <Paper className={classes.paper}>Slider</Paper>
+                    <RangeSlider />
                 </Grid>
                 <Grid item xs={3}>
-                    <Paper className={classes.paper}>Цена от</Paper>
+                    <TextField
+                        className="input"
+                        id="outlined-number"
+                        label="Цена от"
+                        type="number"
+                        variant="outlined"
+                    />
                 </Grid>
                 <Grid item xs={3}>
-                    <Paper className={classes.paper}>Цена до</Paper>
+                    <TextField
+                        className="input"
+                        id="outlined-number"
+                        label="Цена до"
+                        type="number"
+                        variant="outlined"
+                    />
                 </Grid>
                 <Grid item xs={3}>
-                    <Paper className={classes.paper}>Дата получения</Paper>
+                    <DatePickers />
                 </Grid>
                 <Grid item xs={3}>
-                    <Paper className={classes.paper}>Желаемое количество</Paper>
+                <TextField
+                    className="input"
+                    id="outlined-number"
+                    label="Желаемое количество"
+                    type="number"
+                    variant="outlined"
+                />
                 </Grid>
                 <Grid item xs={9}>
-                    <Paper className={classes.paper}>Адрес доставки</Paper>
+                    <TextField className="input" id="outlined-basic" label="Адрес доставки" variant="outlined" />
                 </Grid>
                 <Grid item xs={3}>
-                    <Paper className={classes.paper}>Состояние</Paper>
+                    <State />
                 </Grid>
                 <Grid item xs={6}>
-                    <Paper className={classes.paper}>Создать запрос</Paper>
+                <Button variant="contained" color="primary">
+                  Создать запрос
+                </Button>
                 </Grid>
                 <Grid item xs={3}>
-                    <Paper className={classes.paper}>Загрузить документ</Paper>
+                <Button variant="contained" color="primary" component="span">
+                    Загрузить документ
+                </Button>
                 </Grid>
                 <Grid item xs={3}>
                     <Paper className={classes.paper}>Загрузить фото</Paper>

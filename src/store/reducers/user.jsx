@@ -11,6 +11,19 @@ const initialState = {
     email: "",
     id: 0,
     loading: true,
+   
+    product: "",
+    category: "",
+    description: "",
+    price: {
+        low: 0,
+        high: 0
+    },
+    date: "",
+    amount: 0,
+    address: "",
+    state: "",
+    
 };
 
 export const UserReducer = (state = initialState, action) => {
